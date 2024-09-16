@@ -185,10 +185,17 @@ static DESCRIPTOR_QUALIFIER uint8_t STARTUP_string_descriptor[STRING_DESCRIPTOR_
   0x00, '4', 0x00, '2', 0x00, '4', 0x00, '2', 0x00,
 #endif
 
+#if defined(__FT930__)
+  // String 3 (DFU Product Name): "FT930 DFU Mode"
+  0x1E, USB_DESCRIPTOR_TYPE_STRING, 'F', 0x00, 'T', 0x00, '9', 0x00, '3',
+  0x00, '0', 0x00, ' ', 0x00, 'D', 0x00, 'F', 0x00, 'U', 0x00, ' ', 0x00,
+  'M', 0x00, 'o', 0x00, 'd', 0x00, 'e', 0x00,
+#else
   // String 3 (DFU Product Name): "FT900 DFU Mode"
   0x1E, USB_DESCRIPTOR_TYPE_STRING, 'F', 0x00, 'T', 0x00, '9', 0x00, '0',
   0x00, '0', 0x00, ' ', 0x00, 'D', 0x00, 'F', 0x00, 'U', 0x00, ' ', 0x00,
   'M', 0x00, 'o', 0x00, 'd', 0x00, 'e', 0x00,
+#endif
 
   // String 4 (Interface Name): "DFU Interface"
   0x1c, USB_DESCRIPTOR_TYPE_STRING, 'D', 0x00, 'F', 0x00, 'U', 0x00, ' ',
