@@ -65,3 +65,5 @@ Source/.settings/*
 # Examples build files
 Examples/*/Makefile
 Examples/*/CMakeLists.txt
+
+.vscode

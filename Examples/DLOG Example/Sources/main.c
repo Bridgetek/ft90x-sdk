@@ -53,93 +53,92 @@
 #define DEBUG
 
 #ifdef DEBUG
-#define dbg(s,...)	printf ((s), ##__VA_ARGS__)
+#define dbg(s, ...) printf((s), ##__VA_ARGS__)
 #else
-#define dbg(s,...)
+#define dbg(s, ...)
 #endif
 
-
 /**< global variable indicating start of dlog partition in flash */
-extern __flash__ uint32_t __dlog_partition[];	
+extern __flash__ uint32_t __dlog_partition[];
 
-void myputc(void* p, char c);			/* required for printf library */
-void setup(void);				/* setup UART communication */
-int cmp (uint8_t *a, uint8_t *b, int len);	/* helper routine */
-void dump (uint8_t *d, int len);		/* helper routine */
-	
-uint8_t	wrbuf[256] __attribute__((aligned(4)));	
-uint8_t	rdbuf[256] __attribute__((aligned(4)));
+void myputc(void *p, char c);             /* required for printf library */
+void setup(void);                         /* setup UART communication */
+int cmp(uint8_t *a, uint8_t *b, int len); /* helper routine */
+void dump(uint8_t *d, int len);           /* helper routine */
+
+uint8_t wrbuf[256] __attribute__((aligned(4)));
+uint8_t rdbuf[256] __attribute__((aligned(4)));
 
 int main(void)
 {
-	int	ret;
-	int	pgsz;
-	int	pages;
-	int i, j;
+    int ret;
+    int pgsz;
+    int pages;
+    int i, j;
 
+    setup();
 
-	setup();
+    ret = dlog_init(__dlog_partition, &pgsz, &pages);
 
-	ret = dlog_init (__dlog_partition, &pgsz, &pages);
+    dbg("dlog address: 0x%p\n", __dlog_partition);
 
-	if (ret < 0)
-	{
-		dbg ("dlog_init: failed\n");
-		return 0;
-	}
+    if (ret < 0)
+    {
+        dbg("dlog_init: failed\n");
+        return 0;
+    }
 
-	dbg ("dlog_init: passed, pgsz=0x%x, pages=%d\n", pgsz, pages);
+    dbg("dlog_init: passed, pgsz=0x%x, pages=%d\n", pgsz, pages);
 
-	// erase the partition
-	dlog_erase ();
+    // erase the partition
+    dlog_erase();
 
-	for (i = 0; i < pages; i++)
-	{
-		for (j = 0; j < pgsz; j++)
-			wrbuf[j] = i;
+    for (i = 0; i < pages; i++)
+    {
+        for (j = 0; j < pgsz; j++)
+            wrbuf[j] = i;
 
-		dlog_prog (i, (uint32_t *)wrbuf);
-		
-		for (j = 0; j < pgsz; j++)
-			rdbuf[j] = 0;
-		dlog_read (i, (uint32_t *)rdbuf);
-		cmp (wrbuf, rdbuf, pgsz);
-		dump (rdbuf, pgsz);
-	}
+        dlog_prog(i, (uint32_t *)wrbuf);
 
-	//dlog_erase ();
-	dbg ("program ended\n");
-	while (1);
-	return 0;
+        for (j = 0; j < pgsz; j++)
+            rdbuf[j] = 0;
+        dlog_read(i, (uint32_t *)rdbuf);
+        cmp(wrbuf, rdbuf, pgsz);
+        dump(rdbuf, pgsz);
+    }
+
+    dbg("Program ended\n");
+    while (1) {};
+    return 0;
 }
 
-int cmp (uint8_t *a, uint8_t *b, int len)
+int cmp(uint8_t *a, uint8_t *b, int len)
 {
-	int i;
+    int i;
 
-	for (i = 0; i < len; i++)
-	{
-		if (*a != *b)
-		{
-			dbg ("cmp: mismatch a[%d]=0x%02x, b[%d]=0x%02x\n", i, *a, i, *b);
-			return -1;
-		}
-		a++, b++;
-	}
-	return 0;
+    for (i = 0; i < len; i++)
+    {
+        if (*a != *b)
+        {
+            dbg("cmp: mismatch a[%d]=0x%02x, b[%d]=0x%02x\n", i, *a, i, *b);
+            return -1;
+        }
+        a++, b++;
+    }
+    return 0;
 }
 
-void dump (uint8_t *d, int len)
+void dump(uint8_t *d, int len)
 {
-	int	i;
+    int i;
 
-	for (i = 0; i < len; i++)
-	{
-		if ((i & 0xF) == 0)
-			dbg ("\n0x%02x: ", i);
-		dbg ("%02x ", *d++);
-	}
-	dbg ("\n");
+    for (i = 0; i < len; i++)
+    {
+        if ((i & 0xF) == 0)
+            dbg("\n0x%02x: ", i);
+        dbg("%02x ", *d++);
+    }
+    dbg("\n");
 }
 
 void setup(void)
@@ -153,26 +152,23 @@ void setup(void)
     gpio_function(23, pad_uart0_txd); /* UART0 TXD */
     gpio_function(22, pad_uart0_rxd); /* UART0 RXD */
 #endif
-    uart_open(UART0,                    /* Device */
-              1,                        /* Prescaler = 1 */
-              UART_DIVIDER_19200_BAUD,  /* Divider = 1302 */
-              uart_data_bits_8,         /* No. Data Bits */
-              uart_parity_none,         /* Parity */
-              uart_stop_bits_1);        /* No. Stop Bits */
+    uart_open(UART0,                   /* Device */
+              1,                       /* Prescaler = 1 */
+              UART_DIVIDER_19200_BAUD, /* Divider = 1302 */
+              uart_data_bits_8,        /* No. Data Bits */
+              uart_parity_none,        /* Parity */
+              uart_stop_bits_1);       /* No. Stop Bits */
 
     /* Print out a welcome message... */
     uart_puts(UART0,
-        "\x1B[2J" /* ANSI/VT100 - Clear the Screen */
-        "\x1B[H"  /* ANSI/VT100 - Move Cursor to Home */
-        "(C) Copyright, Bridgetek Pte. Ltd. \r\n"
-            "--------------------------------------------------------------------- \r\n"
-            "Welcome to the Datalogger Example ...                                 \r\n"
-        	"This example will erase the datalogger partition and fill all pages   \r\n"
-        	"from 1 to 14 (14 pages) with repeated values of 0x00 to 0x0D and end. \r\n"
-            "--------------------------------------------------------------------- \r\n"
-        );
-
+              "\x1B[2J" /* ANSI/VT100 - Clear the Screen */
+              "\x1B[H"  /* ANSI/VT100 - Move Cursor to Home */
+              "(C) Copyright, Bridgetek Pte. Ltd. \r\n"
+              "--------------------------------------------------------------------- \r\n"
+              "Welcome to the Datalogger Example ...                                 \r\n"
+              "This example will erase the datalogger partition and fill all pages   \r\n"
+              "from 1 to 14 (14 pages) with repeated values of 0x00 to 0x0D and end. \r\n"
+              "--------------------------------------------------------------------- \r\n");
 }
-
 
 /* end */
