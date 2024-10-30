@@ -404,11 +404,11 @@ interrupt_common:
 
         #save interrupt context.
         #call    vPortGetInterrupts
-.ifdef __FT930__
+#ifdef __FT930__
         lda.b   $r1,0x10123
-.else
+#else
         lda.b   $r1,0x100e3
-.endif
+#endif
         push.l  $r1
 
         # Save stack to prev context

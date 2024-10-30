@@ -27,10 +27,10 @@
 								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.compiler.option.debugging.other.294786200" name="Other debugging flags" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.compiler.option.debugging.other" useByScannerDiscovery="false" value="-fvar-tracking -fvar-tracking-assignments" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.brtchip.compiler.ft900.debug.d2xx.option.include.paths.708154937" name="Include paths (-I)" superClass="com.brtchip.compiler.ft900.debug.d2xx.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${FT9XX_TOOLCHAIN}/hardware/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/tinyprintf}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Includes}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/FreeRTOS/Source/portable/GCC/FT32}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/tinyprintf}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/FreeRTOS/Source/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/FreeRTOS/Source/portable/GCC/FT32}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.dialect.std.851122761" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.brtchip.ft9xx.build.gcc.option.defsym.1528110376" name="Defined symbols (-D)" superClass="com.brtchip.ft9xx.build.gcc.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols">
@@ -88,7 +88,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="com.brtchip.build.config.ft900.release.d2xx.1376161851" name="FT90x_Release" optionalBuildProperties="" parent="com.brtchip.managedbuild.config.gnu.cross.ft900release.base">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="com.brtchip.build.config.ft900.release.d2xx.1376161851" name="FT90x_Release" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="com.brtchip.managedbuild.config.gnu.cross.ft900release.base">
 					<folderInfo id="com.brtchip.build.config.ft900.release.d2xx.1376161851." name="/" resourcePath="">
 						<toolChain id="com.brtchip.toolchain.ft900.release.d2xx.1629479784" name="Bridgetek FT9xx GCC" superClass="com.brtchip.toolchain.ft900.release.d2xx">
 							<option id="com.brtchip.managedbuild.gnu.cross.ft90x.option.createflash.691542301" name="Create Flash Image" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.option.createflash" useByScannerDiscovery="false"/>
@@ -100,10 +100,10 @@
 								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.compiler.option.debugging.level.1752657532" name="Debug Level" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.brtchip.compiler.ft900.release.d2xx.option.include.paths.688553676" name="Include paths (-I)" superClass="com.brtchip.compiler.ft900.release.d2xx.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${FT9XX_TOOLCHAIN}/hardware/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/tinyprintf}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Includes}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/FreeRTOS/Source/portable/GCC/FT32}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/tinyprintf}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/FreeRTOS/Source/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/FreeRTOS/Source/portable/GCC/FT32}&quot;"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.brtchip.ft9xx.build.gcc.option.defsym.1658775791" name="Defined symbols (-D)" superClass="com.brtchip.ft9xx.build.gcc.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__FT900__"/>
@@ -136,7 +136,7 @@
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker.1491638628" name="FT9xx G++ Linker" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker"/>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver.1649825135" name="FT9xx GCC Archiver" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver"/>
 							<tool id="com.brtchip.assembler.ft900.cust.release.d2xx.18674241" name="FT9xx GCC Assembler" superClass="com.brtchip.assembler.ft900.cust.release.d2xx">
-								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.flags.1475768643" name="Assembler flags" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.flags" useByScannerDiscovery="false" value="--defsym __FT900__=1" valueType="string"/>
+								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.flags.1475768643" name="Assembler flags" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.flags" useByScannerDiscovery="false" value="--def __FT900__=1" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2056029430" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash.734464930" name="FT9xx Flash File Generator" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash"/>
@@ -173,10 +173,10 @@
 								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.compiler.option.debugging.other.1282451845" name="Other debugging flags" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.compiler.option.debugging.other" useByScannerDiscovery="false" value="-fvar-tracking -fvar-tracking-assignments" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.brtchip.compiler.ft930.debug.d2xx.option.include.paths.325881854" name="Include paths (-I)" superClass="com.brtchip.compiler.ft930.debug.d2xx.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${FT9XX_TOOLCHAIN}/hardware/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/tinyprintf}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Includes}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/FreeRTOS/Source/portable/GCC/FT32}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/tinyprintf}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/FreeRTOS/Source/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/FreeRTOS/Source/portable/GCC/FT32}&quot;"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.brtchip.defsym.ft930.cust.debug.d2xx.1800584145" name="Defined symbols (-D)" superClass="com.brtchip.defsym.ft930.cust.debug.d2xx" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__FT930__"/>
@@ -206,6 +206,7 @@
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker.1376907055" name="FT9xx G++ Linker" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker"/>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver.2031889754" name="FT9xx GCC Archiver" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver"/>
 							<tool id="com.brtchip.assembler.ft930.cust.debug.d2xx.1689075796" name="FT9xx GCC Assembler" superClass="com.brtchip.assembler.ft930.cust.debug.d2xx">
+								<option id="com.brtchip.assembler.ft930.cust.debug.d2xx.flags.1406102989" superClass="com.brtchip.assembler.ft930.cust.debug.d2xx.flags" value="--def __FT930__=1" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2076132741" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash.798947254" name="FT9xx Flash File Generator" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash"/>
@@ -241,10 +242,10 @@
 								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.compiler.option.debugging.level.271923940" name="Debug Level" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.brtchip.compiler.ft930.release.d2xx.option.include.paths.306032735" name="Include paths (-I)" superClass="com.brtchip.compiler.ft930.release.d2xx.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${FT9XX_TOOLCHAIN}/hardware/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/tinyprintf}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Includes}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/FreeRTOS/Source/portable/GCC/FT32}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/tinyprintf}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/FreeRTOS/Source/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib/FreeRTOS/Source/portable/GCC/FT32}&quot;"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.brtchip.defsym.ft930.cust.release.d2xx.1755425058" name="Defined symbols (-D)" superClass="com.brtchip.defsym.ft930.cust.release.d2xx" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__FT930__"/>
@@ -273,6 +274,7 @@
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker.847473735" name="FT9xx G++ Linker" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker"/>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver.889014125" name="FT9xx GCC Archiver" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver"/>
 							<tool id="com.brtchip.assembler.ft930.cust.release.d2xx.1277993003" name="FT9xx GCC Assembler" superClass="com.brtchip.assembler.ft930.cust.release.d2xx">
+								<option id="com.brtchip.assembler.ft930.cust.release.d2xx.flags.1113671985" superClass="com.brtchip.assembler.ft930.cust.release.d2xx.flags" value="--def __FT930__=1" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.414040689" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash.335933188" name="FT9xx Flash File Generator" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash"/>
@@ -303,31 +305,5 @@
 		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="com.brtchip.build.config.ft900.release.d2xx.1376161851;com.brtchip.build.config.ft900.release.d2xx.1376161851.;com.brtchip.compiler.ft900.release.d2xx.344807476;cdt.managedbuild.tool.gnu.c.compiler.input.1596900779">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.brtchip.build.config.ft930.release.d2xx.1382608150;com.brtchip.build.config.ft930.release.d2xx.1382608150.;com.brtchip.compiler.ft900.cust.release.d2xx.1335862853;cdt.managedbuild.tool.gnu.c.compiler.input.177606947">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.brtchip.build.config.d2xx.ft900.debug.base.692404863;com.brtchip.build.config.d2xx.ft900.debug.base.692404863.;com.brtchip.compiler.ft900.debug.d2xx.983964594;cdt.managedbuild.tool.gnu.c.compiler.input.382788294">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.brtchip.build.config.ft930.debug.d2xx.1083473055;com.brtchip.build.config.ft930.debug.d2xx.1083473055.;com.brtchip.compiler.ft930.cust.debug.d2xx.1832477808;cdt.managedbuild.tool.gnu.c.compiler.input.941768234">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.brtchip.build.config.d2xx.ft900.debug.base.692404863;com.brtchip.build.config.d2xx.ft900.debug.base.692404863.;com.brtchip.managedbuild.gnu.cross.ft90x.tool.c.compiler.188399893;cdt.managedbuild.tool.gnu.c.compiler.input.1329921302">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.brtchip.build.config.ft930.release.d2xx.1771276815;com.brtchip.build.config.ft930.release.d2xx.1771276815.;com.brtchip.compiler.ft900.cust.release.d2xx.597219205;cdt.managedbuild.tool.gnu.c.compiler.input.1564217803">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.brtchip.build.config.ft900.release.d2xx.819813001;com.brtchip.build.config.ft900.release.d2xx.819813001.;com.brtchip.managedbuild.gnu.cross.ft90x.tool.c.compiler.158469771;cdt.managedbuild.tool.gnu.c.compiler.input.1394305308">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.brtchip.build.config.ft930.debug.d2xx.302436148;com.brtchip.build.config.ft930.debug.d2xx.302436148.;com.brtchip.compiler.ft930.cust.debug.d2xx.8627101;cdt.managedbuild.tool.gnu.c.compiler.input.1933988121">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
+	<storageModule moduleId="scannerConfiguration"/>
 </cproject>

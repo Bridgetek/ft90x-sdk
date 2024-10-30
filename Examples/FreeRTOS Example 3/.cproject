@@ -59,7 +59,7 @@
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker.979194786" name="FT9xx G++ Linker" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker"/>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver.1377097154" name="FT9xx GCC Archiver" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver"/>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.1608560304" name="FT9xx GCC Assembler" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler">
-								<option id="gnu.both.asm.option.flags.451646066" name="Assembler flags" superClass="gnu.both.asm.option.flags" value="--defsym __FT900__=1" valueType="string"/>
+								<option id="gnu.both.asm.option.flags.451646066" name="Assembler flags" superClass="gnu.both.asm.option.flags" value="--def __FT900__=1" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.194264572" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash.1140988099" name="FT9xx Flash File Generator" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash"/>
@@ -125,7 +125,7 @@
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker.53819752" name="FT9xx G++ Linker" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker"/>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver.1093602931" name="FT9xx GCC Archiver" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver"/>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.1100506845" name="FT9xx GCC Assembler" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler">
-								<option id="gnu.both.asm.option.flags.1273826503" name="Assembler flags" superClass="gnu.both.asm.option.flags" useByScannerDiscovery="false" value="--defsym __FT900__=1" valueType="string"/>
+								<option id="gnu.both.asm.option.flags.1273826503" name="Assembler flags" superClass="gnu.both.asm.option.flags" useByScannerDiscovery="false" value="--def __FT900__=1" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1884391105" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash.157933172" name="FT9xx Flash File Generator" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash"/>
@@ -149,7 +149,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="com.brtchip.managedbuild.config.gnu.cross.ft930debug.base.1925350567" name="FT93x_Debug" optionalBuildProperties="" parent="com.brtchip.managedbuild.config.gnu.cross.ft930debug.base">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="com.brtchip.managedbuild.config.gnu.cross.ft930debug.base.1925350567" name="FT93x_Debug" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="com.brtchip.managedbuild.config.gnu.cross.ft930debug.base">
 					<folderInfo id="com.brtchip.managedbuild.config.gnu.cross.ft930debug.base.1925350567." name="/" resourcePath="">
 						<toolChain id="com.brtchip.toolchain.ft930.debug.base.557478747" name="Bridgetek FT9xx GCC" superClass="com.brtchip.toolchain.ft930.debug.base">
 							<option id="com.brtchip.managedbuild.gnu.cross.ft90x.option.createflash.125163650" name="Create Flash Image" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.option.createflash" useByScannerDiscovery="false"/>
@@ -183,8 +183,8 @@
 							</tool>
 							<tool id="com.brtchip.linker.ft930.debug.base.1455629808" name="FT9xx GCC Linker" superClass="com.brtchip.linker.ft930.debug.base">
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.brtchip.linker.option.ldOther.ft930.debug.base.68311771" name="Other options (-Xlinker [option])" superClass="com.brtchip.linker.option.ldOther.ft930.debug.base" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value="--defsym=__PMSIZE=128K"/>
 									<listOptionValue builtIn="false" value="-dT &quot;${ProjDirPath}/Scripts/freertos.ld&quot;"/>
+									<listOptionValue builtIn="false" value="--defsym=__PMSIZE=128K"/>
 									<listOptionValue builtIn="false" value="--defsym=__RAMSIZE=32K"/>
 								</option>
 								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.linker.option.nostartfiles.2073289622" name="Do not use standard start files (-nostartfiles)" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.linker.option.nostartfiles" value="true" valueType="boolean"/>
@@ -196,7 +196,7 @@
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker.1338826831" name="FT9xx G++ Linker" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker"/>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver.37980922" name="FT9xx GCC Archiver" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver"/>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.1603552572" name="FT9xx GCC Assembler" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler">
-								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.flags.570178920" name="Assembler flags" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.flags" value="--defsym __FT930__=1" valueType="string"/>
+								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.flags.570178920" name="Assembler flags" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.flags" value="--def __FT930__=1" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.118884802" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash.1120830494" name="FT9xx Flash File Generator" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash"/>
@@ -251,8 +251,8 @@
 							</tool>
 							<tool id="com.brtchip.linker.ft930.release.base.1575903817" name="FT9xx GCC Linker" superClass="com.brtchip.linker.ft930.release.base">
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.brtchip.linker.option.ldOther.ft930.release.base.1253403578" name="Other options (-Xlinker [option])" superClass="com.brtchip.linker.option.ldOther.ft930.release.base" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value="--defsym=__PMSIZE=128K"/>
 									<listOptionValue builtIn="false" value="-dT &quot;${ProjDirPath}/Scripts/freertos.ld&quot;"/>
+									<listOptionValue builtIn="false" value="--defsym=__PMSIZE=128K"/>
 									<listOptionValue builtIn="false" value="--defsym=__RAMSIZE=32K"/>
 								</option>
 								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.linker.option.nostartfiles.1372559742" name="Do not use standard start files (-nostartfiles)" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.linker.option.nostartfiles" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -264,7 +264,7 @@
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker.290287116" name="FT9xx G++ Linker" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.cpp.linker"/>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver.218974233" name="FT9xx GCC Archiver" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.archiver"/>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.319311458" name="FT9xx GCC Assembler" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler">
-								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.flags.303203935" name="Assembler flags" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.flags" useByScannerDiscovery="false" value="--defsym __FT930__=1" valueType="string"/>
+								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.flags.303203935" name="Assembler flags" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.assembler.flags" useByScannerDiscovery="false" value="--def __FT930__=1" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2120302836" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 							<tool id="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash.1277902054" name="FT9xx Flash File Generator" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.tool.createflash"/>

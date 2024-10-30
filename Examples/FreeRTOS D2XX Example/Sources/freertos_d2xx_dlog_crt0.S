@@ -143,8 +143,8 @@ init:
         jmp    1b
 2:
         memset $r4,$r1,$r2
-.if 0
-.ifdef __FT930__
+#if 0
+#ifdef __FT930__
 /*##############################################################*/
 		# copy UserConfig DATA from flash to mailbox memory
 /*##############################################################*/
@@ -173,8 +173,8 @@ init:
         # Copy RAM[$r1] to Mailbox $r4, for $r2 bytes
         streamouti.b   $r4,$r1,$r2
 /*############################################################*/
-.endif /* __FT930__ */
-.endif /* 0 */
+#endif /* __FT930__ */
+#endif /* 0 */
         sub.l   $sp,$sp,24  # Space for the caller argument frame
         jmp		main
 
@@ -431,11 +431,11 @@ interrupt_common:
 
         #save interrupt context.
         #call    vPortGetInterrupts
-.ifdef __FT930__
+#ifdef __FT930__
         lda.b   $r1,0x10123
-.else
+#else
         lda.b   $r1,0x100e3
-.endif
+#endif
         push.l  $r1
 
         # Save stack to prev context
@@ -516,11 +516,11 @@ __gxx_personality_sj0:
 D2XX_partition_start = .
 
 .if IS_IMG_D2XX_PRESENT
-.ifdef __FT930__
-.include "ft930_d2xx_default_config.inc"
-.else
-.include "ft900_d2xx_default_config.inc"
-.endif
+#ifdef __FT930__
+#include "ft930_d2xx_default_config.inc"
+#else
+#include "ft900_d2xx_default_config.inc"
+#endif
 .endif
 
 D2XX_partition_end = .

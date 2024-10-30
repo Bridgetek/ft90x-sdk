@@ -94,7 +94,7 @@
 /* These are used in porting code (Source\portable). */
 #define configTICK_RATE_HZ                          ((TickType_t)1000)
 #if defined(__FT900__)
-#define configTOTAL_HEAP_SIZE                       ((size_t)(40 * 1024))
+#define configTOTAL_HEAP_SIZE                       ((size_t)(50 * 1024))
 #elif defined(__FT930__)
 #define configTOTAL_HEAP_SIZE                       ((size_t)(26 * 1024))
 #endif
@@ -102,7 +102,7 @@
 
 /* These are defined in FreeRTOS.h, mandatory. */
 #define configMINIMAL_STACK_SIZE                    ((unsigned short)2*128)
-#define configMAX_PRIORITIES                        10
+#define configMAX_PRIORITIES                        4
 #define configUSE_PREEMPTION                        1
 #define configUSE_IDLE_HOOK                         0
 #define configUSE_TICK_HOOK                         0
@@ -121,7 +121,6 @@
 #define configUSE_QUEUE_SETS                        0
 #define configUSE_NEWLIB_REENTRANT                  0
 #define portTICK_TYPE_IS_ATOMIC                     0
-#define portCRITICAL_NESTING_IN_TCB					1
 
 /* These are defined in FreeRTOS.h, default 0 when !defined. For debug use. */
 #define configGENERATE_RUN_TIME_STATS               0
