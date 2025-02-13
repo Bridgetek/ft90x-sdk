@@ -1,7 +1,7 @@
 # Populate examples directories with files from a template.
 # Copes with makefile templates or cmake templates.
-# Argument 1 is the incoming template file. 
-# Arguement 2 is a filename to use in all the example directories.
+# Argument 1 is the incoming template file.
+# Argument 2 is a filename to use in all the example directories.
 # The template file is formatted like example_template.cmake:
 # A line starting with "# Template" will conditionally turn on or off the next
 # line of the file. If there is a match with the required keyword in the rest
@@ -12,9 +12,37 @@
 # The resulting filtered file is copied to the appropriate examples
 # directories using the filename supplies in argument 2.
 
-if [[ $# -ne 2 ]] ; then
+if [[ $# -ne 2 && $1 != "clean" ]] ; then
     echo 'Usage: ./example_template.sh <template_file> <output_file_name>'
+    echo '       ./example_template.sh clean'
     exit 1
+fi
+
+clean() {
+    for dir in \
+        "ADC Example 1" "ADC Example 2" "ADC Example 3" "ADC Example 4" "ADC Example 5" \
+        "BCD Example 1" "Camera Example 1" "CAN Example 1" "CAN Example 2" "CAN Example 3" \
+        "D2XX Example 1" "D2XX Example UART Bridge" "DAC Example 1" "DAC Example 2" "DAC Example 3" \
+        "DLOG Example" "Ethernet Example 1" "FreeRTOS D2XX Example" "FreeRTOS Example 1" \
+        "FreeRTOS Example 2" "FreeRTOS Example 3" "FreeRTOS Example 4" "FreeRTOS lwIP Example" \
+        "GPIO DFU Example" "GPIO Example 1" "GPIO Example 2" "GPIO Example 3" "I2C Master Example 1" \
+        "I2C Master Example 2" "I2C Slave Example 1" "I2S Master Example 1" "I2S Master Example 2" \
+        "PWM Example 1" "PWM Example 2" "PWM Example 3" "RTC Example 1" "RTC Example 2" \
+        "RTC External Example 1" "RTC External Example 2" "SD Host Example 1" "SPI Master Example 1" \
+        "SPI Master Example 2" "SPI Master Example 3" "SPI Slave Example 1" "Timer Example 1" \
+        "Timer Example 2" "Timer Example 3" "UART 9Bit Mode Example" "UART Example 1" "UART Example 2" \
+        "UART Example 3" "UART Example 4" "USBD Example BOMS to SDcard" "USBD Example CDCACM" \
+        "USBD Example Composite" "USBD Example HID" "USBD Example HID Bridge" "USBH Example BOMS" \
+        "USBH Example CDCACM" "USBH Example File System" "USBH Example FT232" "USBH Example HID" \
+        "USBH Example HID to UART" "USBH Example Hub" "Watchdog Example 1"
+    do
+        rm -f "$dir/CMakeLists.txt" "$dir/Makefile"
+    done
+}
+
+if [[ $1 == "clean" ]]; then
+    clean
+    exit 0
 fi
 
 # Create temporary files to store processed files.
